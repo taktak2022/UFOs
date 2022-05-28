@@ -7,22 +7,21 @@ var tbody = d3.select("tbody");
 function buildTable(data) {
     tbody.html("");
 
-    // MODULE 11.5.2 ADD A forEach LOOP
-    data.forEach((dataRow) => {
+        // MODULE 11.5.2 ADD A forEach LOOP
+        data.forEach((dataRow) => {
 
-        // CREATE A VARIABLE TO APPEND A ROW TO THE TABLE BODY
-        let row = tbody.append("tr");
+            // CREATE A VARIABLE TO APPEND A ROW TO THE TABLE BODY
+            let row = tbody.append("tr");
 
-        // LOOP THRU EACH FIELD IN THE dataRow ARGUMENT
-        Object.values(dataRow).forEach((val) => {
-
-            // APPEND EACH VALUE OF THE OBJECT TO A CELL IN THE TABLE
-            let cell = row.append("td");
-            cell.text(val);
-            }
-        );
-    });
-}
+            // LOOP THRU EACH FIELD IN THE dataRow ARGUMENT
+            Object.values(dataRow).forEach((val) => {
+                // APPEND EACH VALUE OF THE OBJECT TO A CELL IN THE TABLE
+                let cell = row.append("td");
+                cell.text(val);
+                }
+            );
+        });
+    }
 
 // MODULE 11.5.3 ADD FILTER FOR DATE
 function handleClick() {
@@ -44,5 +43,3 @@ d3.selectAll("#filter-btn").on("click", handleClick);
 
 // BUILD THE TABLE
 buildTable(tableData);
-
-
